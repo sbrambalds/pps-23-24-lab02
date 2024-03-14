@@ -1,4 +1,4 @@
-package task02.task02b
+package task2.task2b
 
 object Main extends App:
 
