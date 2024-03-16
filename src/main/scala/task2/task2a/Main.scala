@@ -9,7 +9,7 @@ object Main extends App:
     def isPositive(n: Int): String = n match
         case _ => positive(n)
     
-    def neg[A](pred: A => Boolean): A => Boolean = !pred(_) // i => !f(g(i))
+    def neg[A](pred: A => Boolean): A => Boolean = !pred(_) 
     
     val empty: String => Boolean = _ == ""
     val notEmpty = neg(empty) // which type of notEmpty?
