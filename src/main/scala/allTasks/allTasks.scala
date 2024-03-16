@@ -30,7 +30,7 @@ class allTasks:
     def compose[A, B, C](f: B => C, g: A => B): A => C = x => f(g(x))
 
     // Task 3:
-    def gcd(a: Int, b: Int): Int = b match // this is the tail-recursive version of the funcion, i didn't know how made it using normal recursion
+    def gcd(a: Int, b: Int): Int = b match // this is the tail-recursive version of the funcion, i didn't know how to do it using normal recursion
         case 0 => a
         case i if b < a => gcd(b, a % b)
         case i if b > a => gcd(a, b % a)
@@ -51,7 +51,6 @@ class allTasks:
         case Shape.Circle(r) => Shape.Circle(r*alpha)
         case Shape.Square(s) => Shape.Square(s*alpha)
 
-    val delta = 1e-15 // necessary for assertion with Double types
     val alpha = 0.5
 
     val side = 4.5
@@ -70,6 +69,7 @@ class allTasks:
     }
 
     @Test def testPerimeter() = {
+        val delta = 1e-15 // necessary for assertion with Double types
         val rectPerimeter: Double = (height*2) + (width*2)
         val circlePerimeter: Double = Math.PI*2*radius
         val squarePerimeter: Double = side*4
@@ -90,7 +90,6 @@ class allTasks:
     }
 
     // Task 5:
-
     def map[A, B](optional: Optional[A], f: A => B): Optional[B] = optional match 
       case Maybe(value) => Optional.Maybe(f(value))
       case Empty() => Empty()
